@@ -5,9 +5,9 @@ function App() {
   return (
     <div className="App">
       <Banner />
-      <TextField label="Nome" />
-      <TextField label="Cargo" />
-      <TextField label="Imagem" />
+      <TextField label="Name" placeholder="Enter your name" />
+      <TextField label="Position" placeholder="Enter your position" />
+      <TextField label="Image" placeholder="Enter the address of your image" />
     </div>
   );
 }

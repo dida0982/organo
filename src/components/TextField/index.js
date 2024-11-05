@@ -1,12 +1,13 @@
-import './TextField.css'
+import "./TextField.css";
 
-const TextField = () => {
-    return (
-        <div className='campo-texto'>
-            <label>Nome</label>   
-            <input placeholder='Digite o seu nome'/>
-        </div>
-    )
-}
-    
-export default TextField
+const TextField = (props) => {
+  const placeholderModification = `${props.placeholder}...`;
+  return (
+    <div className="field-text">
+      <label>{props.label}</label>
+      <input placeholder={placeholderModification} />
+    </div>
+  );
+};
+
+export default TextField;
