@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Button from "../Button";
 import DropDownList from "../DropDownList";
 import TextField from "../TextField";
@@ -14,9 +15,14 @@ const Form = () => {
     "Innovation and management"
   ];
 
+  const [name, setName] = useState("");
+  const [position, setPosition] = useState("");
+  const [image, setImage] = useState("");
+  const [team, setTeam] = useState("");
+
   const whenSaving = (event) => {
     event.preventDefault();
-    console.log("Form has been submitted");
+    console.log("Form has been submitted =>", name, position, image);
   };
 
   return (
@@ -27,17 +33,29 @@ const Form = () => {
           mandatory={true}
           label="Name"
           placeholder="Enter your name"
+          value={name}
+          toTheChanged={(value) => setName(value)}
         />
         <TextField
           mandatory={true}
           label="Position"
           placeholder="Enter your position"
+          value={position}
+          toTheChanged={(value) => setPosition(value)}
         />
         <TextField
           label="Image"
           placeholder="Enter the address of your image"
+          value={image}
+          toTheChanged={(value) => setImage(value)}
         />
-        <DropDownList label="Teams" items={teams} />
+        <DropDownList
+          mandatory={true}
+          label="Teams"
+          items={teams}
+          value={team}
+          toTheChanged={(value) => setTeam(value)}
+        />
         <Button>Create card</Button>
       </form>
     </section>
