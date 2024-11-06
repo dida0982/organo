@@ -3,18 +3,15 @@ import "./TextField.css";
 const TextField = (props) => {
   const placeholderModification = `${props.placeholder}...`;
 
-  let value = "";
-
   const whenTyped = (event) => {
-    value = event.target.value;
-    console.log(value);
+   props.ToTheChanged(event.target.value)
   };
 
   return (
     <div className="field-text">
       <label>{props.label}</label>
       <input
-        value={value}
+        value={props.value}
         onChange={whenTyped}
         required={props.mandatory}
         placeholder={placeholderModification}
