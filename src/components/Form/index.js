@@ -4,7 +4,7 @@ import DropDownList from "../DropDownList";
 import TextField from "../TextField";
 import "./Form.css";
 
-const Form = () => {
+const Form = (props) => {
   const teams = [
     "Programmer",
     "Front-End",
@@ -22,7 +22,12 @@ const Form = () => {
 
   const whenSaving = (event) => {
     event.preventDefault();
-    console.log("Form has been submitted =>", name, position, image);
+    props.toTheRegisteredCollaborator({
+      name,
+      position,
+      image,
+      team
+    })
   };
 
   return (
