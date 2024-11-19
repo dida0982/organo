@@ -27,7 +27,7 @@ const Form = (props) => {
       position,
       image,
       team
-    })
+    });
   };
 
   return (
